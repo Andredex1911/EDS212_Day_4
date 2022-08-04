@@ -132,6 +132,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 [3,]  0.0 0.08    0</code></pre>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Initial Condition</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>insect_y0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12000</span>, <span class="dv">700</span>, <span class="dv">500</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>insect_y0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12000   700   500</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>insect_y1 <span class="ot">&lt;-</span> insect_leslie <span class="sc">%*%</span> insect_y0</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>insect_y1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       [,1]
+[1,] 300000
+[2,]   2400
+[3,]     56</code></pre>
+</div>
+</div>
+<section id="estimate-populations-at-each-life-stage-at-year-2-and-3" class="level4">
+<h4 class="anchored" data-anchor-id="estimate-populations-at-each-life-stage-at-year-2-and-3">Estimate populations at each life stage at year 2 and 3</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>insect_y2 <span class="ot">&lt;-</span> insect_leslie <span class="sc">%*%</span> insect_y1</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>insect_y2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      [,1]
+[1,] 33600
+[2,] 60000
+[3,]   192</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>insect_y3 <span class="ot">&lt;-</span> insect_leslie <span class="sc">%*%</span> insect_y2</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>insect_y3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       [,1]
+[1,] 115200
+[2,]   6720
+[3,]   4800</code></pre>
+</div>
+</div>
+</section>
 </section>
 
 </main>
